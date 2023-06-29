@@ -110,6 +110,12 @@ type
     ShutdownTimer: TTimer;
     NullTimer: TTimer;
     lbLeftTime: TLabel;
+    pnWarnBt: TPanel;
+    lWarnBt: TLabel;
+    pnWarning: TPanel;
+    btTVS: TButton;
+    btDPK: TButton;
+    btTPAP: TButton;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     // преобразование веса со второго канала
@@ -170,6 +176,8 @@ type
     offset  : integer;  // смещение нул€
     limUp   : integer;  // верхний предел
     limDown : integer;  // нижний предел
+    limDownWarn : integer;  // нижний предел сигнализации
+    limUpWarn   : integer;  // верхний предел сигнализации
     weight  : integer;  // вес абсолютный
     weight2 : integer;  // вес по каналу 2 (абсолютный)
     weightr : integer;  // вес относительный
@@ -178,6 +186,7 @@ type
     mcoeff  : real;     // коэфф. преобразовани€ дл€ перемещени€
     moffset : integer;  // смещение нул€ дл€ перемещени€
     vspeed  : real;     // кол-во зн-й в сек (скорость обмена с модулем «»Ќ)
+    ProcessValue : integer;
 
     procedure CloseSession;
   public

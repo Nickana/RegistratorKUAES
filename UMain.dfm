@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 279
-  Top = 171
-  Width = 620
-  Height = 455
+  Left = 536
+  Top = 342
+  Width = 836
+  Height = 587
   Caption = #1056#1077#1075#1080#1089#1090#1088#1072#1090#1086#1088
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,14 +18,14 @@ object Form1: TForm1
   object pnTools: TPanel
     Left = 0
     Top = 0
-    Width = 612
+    Width = 820
     Height = 75
     Align = alTop
     BevelOuter = bvNone
     Color = clBlack
     TabOrder = 0
     DesignSize = (
-      612
+      820
       75)
     object lbChannel1: TLabel
       Left = 8
@@ -192,7 +192,7 @@ object Form1: TForm1
       ParentFont = False
     end
     object btnShutDown: TRxSpeedButton
-      Left = 440
+      Left = 656
       Top = 4
       Width = 170
       Height = 25
@@ -208,7 +208,7 @@ object Form1: TForm1
       OnClick = btnShutDownClick
     end
     object lbMessage: TLabel
-      Left = 440
+      Left = 656
       Top = 32
       Width = 170
       Height = 35
@@ -342,12 +342,30 @@ object Form1: TForm1
       ParentFont = False
       OnClick = btnKeyboardClick
     end
+    object pnWarnBt: TPanel
+      Left = 456
+      Top = 8
+      Width = 137
+      Height = 65
+      TabOrder = 0
+      object lWarnBt: TLabel
+        Left = 8
+        Top = 0
+        Width = 121
+        Height = 65
+        Align = alCustom
+        Alignment = taCenter
+        Caption = #1053#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077' '#1091#1089#1080#1083#1080#1103' '#1085#1072' '#1079#1072#1093#1074#1072#1090#1077' '#1074#1077#1089#1091' '#1087#1077#1088#1077#1075#1088#1091#1078#1072#1077#1084#1086#1075#1086' '#1080#1079#1076#1077#1083#1080#1103
+        Layout = tlCenter
+        WordWrap = True
+      end
+    end
   end
   object Chart: TChart
     Left = 0
     Top = 75
-    Width = 461
-    Height = 350
+    Width = 669
+    Height = 473
     AllowPanning = pmHorizontal
     AllowZoom = False
     BackWall.Brush.Color = clWhite
@@ -527,6 +545,37 @@ object Form1: TForm1
         OnClick = btnCancelClick
       end
     end
+    object pnWarning: TPanel
+      Left = 456
+      Top = -1
+      Width = 137
+      Height = 138
+      TabOrder = 2
+      object btTVS: TButton
+        Left = 32
+        Top = 16
+        Width = 75
+        Height = 25
+        Caption = #1058#1042#1057
+        TabOrder = 0
+      end
+      object btDPK: TButton
+        Left = 32
+        Top = 56
+        Width = 75
+        Height = 25
+        Caption = #1044#1055#1050
+        TabOrder = 1
+      end
+      object btTPAP: TButton
+        Left = 32
+        Top = 96
+        Width = 75
+        Height = 25
+        Caption = #1058#1040','#1040#1055
+        TabOrder = 2
+      end
+    end
     object Series2: TLineSeries
       Marks.ArrowLength = 8
       Marks.Style = smsValue
@@ -566,10 +615,10 @@ object Form1: TForm1
     end
   end
   object pnKeyboard: TPanel
-    Left = 461
+    Left = 669
     Top = 75
     Width = 151
-    Height = 350
+    Height = 473
     Align = alRight
     BevelOuter = bvNone
     Color = clGray
@@ -1139,7 +1188,7 @@ object Form1: TForm1
   end
   object pnShutdownProcess: TxpPanel
     Left = 120
-    Top = 168
+    Top = 328
     Width = 329
     Height = 121
     GradientFill = False
@@ -1214,6 +1263,7 @@ object Form1: TForm1
       Top = 68
       Width = 297
       Height = 20
+      HintImageIndex = 0
       TabOrder = 0
       SkinDataName = 'gauge'
       DefaultFont.Charset = DEFAULT_CHARSET
@@ -1231,6 +1281,7 @@ object Form1: TForm1
       MaxValue = 60
       Value = 0
       Vertical = False
+      ProgressAnimationPause = 3000
     end
   end
   object Timer: TTimer
@@ -1292,6 +1343,7 @@ object Form1: TForm1
     Top = 345
   end
   object SelectDirectory: TbsSkinSelectDirectoryDialog
+    ToolButtonsTransparent = False
     DialogWidth = 0
     DialogHeight = 0
     DialogMinWidth = 0
