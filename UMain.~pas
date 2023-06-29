@@ -116,6 +116,7 @@ type
     btTVS: TButton;
     btDPK: TButton;
     btTPAP: TButton;
+    WarningTimer: TTimer;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     // преобразование веса со второго канала
@@ -169,6 +170,14 @@ type
     procedure LinkTimerTimer(Sender: TObject);
     procedure ShutdownTimerTimer(Sender: TObject);
     procedure NullTimerTimer(Sender: TObject);
+    procedure pnWarnBtMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure pnWarnBtMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure WarningTimerTimer(Sender: TObject);
+    procedure btTVSClick(Sender: TObject);
+    procedure btDPKClick(Sender: TObject);
+    procedure btTPAPClick(Sender: TObject);
   private
     { Private declarations }
     // параметры
@@ -192,6 +201,7 @@ type
   public
     { Public declarations }
     bNull   : boolean;  // признак обнуления
+    blWarning  : boolean;
   end;
 
 var
@@ -299,8 +309,8 @@ begin
   // close database
   CloseFile(f);
   // close channels
-  COM1.Close;
-  COM2.Close;
+  //COM1.Close;  // раскоментить
+  //COM2.Close;
   // close ini-file
   data.WriteFloat('Settings','coeff',coeff);
   data.WriteInteger('Settings','offset',offset);
@@ -500,7 +510,18 @@ begin
         weight:=w0;
         weightr:=w;
         limUp:=lu;
-        limDown:=ld;
+        limDown:=ld; //участок кода нижэе взят из другой версии проги (с панельяю(инфа для разраба))
+        if (weight>=limUpWarn) and (limUpWarn<>0)
+          then
+            begin
+              blWarning:=true;
+            end
+          else
+            if (weight<=limDownWarn) and (limDownWarn<>0)
+              then
+                begin
+                  blWarning:=true;
+                end
       (*
         // отключаем таймер опроса второго канала
         timer.Enabled:=false;
@@ -646,6 +667,16 @@ begin
             // убрать сообщение
             lbMessage.Visible:=false;
           end;
+          // код ниде из другой версии
+    if (weight2>=limUpWarn) and (limUpWarn<>0)
+    then begin
+      blWarning:=true;
+    end
+  else
+    if (weight2<=limDownWarn) and (limDownWarn<>0)
+      then begin
+        blWarning:=true;
+      end;
   // отрисовка значений
   DrawValues;
 //  timer.Enabled:=true;
@@ -725,12 +756,12 @@ begin
   // init COM1
   packet1.Size:=MaxLen1;
   packet1.StartString:=StartByte1;
-  COM1.Open;
+  //COM1.Open;
   // init COM2
   packet2.Size:=MaxLen2;
   packet2.StartString:=StartByte2;
   packet2.StopString:=StopByte2;
-  COM2.Open;
+  //COM2.Open;
   // init other controls and vars
   oldLU:=limUp-1;
   oldLD:=limDown-1;
@@ -769,7 +800,7 @@ begin
         bMove:=false; // cm02[]
         cmd:=cm02;
       end;
-  COM2.Write(cmd,cmdLen);
+  //COM2.Write(cmd,cmdLen);//раскоментить
   b1:=not b1;
 end;
 
@@ -1311,6 +1342,68 @@ begin
   end;
   NullTimer.Enabled:=false;
 *)
+end;
+
+procedure TForm1.pnWarnBtMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+ if (limUpWarn=0)then
+  begin
+    limUpWarn:=data.ReadInteger('Settings','limUp_TVS',0);
+    limDownWarn:=data.ReadInteger('Settings','limDown_TVS',0);
+  end;
+  lWarnBt.Top:=lWarnBt.Top+1;
+  lWarnBt.Left:=lWarnBt.Left+1;
+  if blWarning=false then pnWarning.Visible:=true
+  else blWarning:=false;
+  pnWarning.Visible:=true;
+  if Form1.pnWarnBt.Color = clRed then Form1.pnWarnBt.Color := clBtnFace;
+end;
+
+procedure TForm1.pnWarnBtMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  lWarnBt.Top:=lWarnBt.Top-1;
+  lWarnBt.Left:=lWarnBt.Left-1;
+end;
+
+procedure TForm1.WarningTimerTimer(Sender: TObject);//код таймера переносной из другой версии
+begin
+if blWarning = true then
+    begin
+      if Form1.pnWarnBt.Color = clBtnFace then Form1.pnWarnBt.Color := clRed
+      else Form1.pnWarnBt.Color := clBtnFace;
+    end;
+end;
+
+procedure TForm1.btTVSClick(Sender: TObject);
+begin
+  str:=path+'data.ini';
+  data:=TIniFile.Create(str);
+  limUpWarn:=data.ReadInteger('Settings','limUp_TVS',0);
+  limDownWarn:=data.ReadInteger('Settings','limDown_TVS',0);
+  pnWarning.Visible:=false;
+
+end;
+
+procedure TForm1.btDPKClick(Sender: TObject);
+begin
+  str:=path+'data.ini';
+  data:=TIniFile.Create(str);
+  limUpWarn:=data.ReadInteger('Settings','limUp_DPK',0);
+  limDownWarn:=data.ReadInteger('Settings','limDown_DPK',0);
+  pnWarning.Visible:=false;
+
+end;
+
+procedure TForm1.btTPAPClick(Sender: TObject);
+begin
+  str:=path+'data.ini';
+  data:=TIniFile.Create(str);
+  limUpWarn:=data.ReadInteger('Settings','limUp_TPAP',0);
+  limDownWarn:=data.ReadInteger('Settings','limDown_TPAP',0);
+  pnWarning.Visible:=false;
+
 end;
 
 end.
