@@ -355,7 +355,7 @@ object Form1: TForm1
         Left = 8
         Top = 0
         Width = 121
-        Height = 65
+        Height = 52
         Align = alCustom
         Alignment = taCenter
         Caption = #1053#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077' '#1091#1089#1080#1083#1080#1103' '#1085#1072' '#1079#1072#1093#1074#1072#1090#1077' '#1074#1077#1089#1091' '#1087#1077#1088#1077#1075#1088#1091#1078#1072#1077#1084#1086#1075#1086' '#1080#1079#1076#1077#1083#1080#1103
@@ -857,343 +857,203 @@ object Form1: TForm1
       Brush.Color = clGray
       Shape = stCircle
     end
-    object btn100: TxpButton
-      Left = 16
-      Top = 8
-      Width = 35
-      Height = 35
-      Caption = '100'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 0
-      OnClick = btn100Click
-    end
-    object btn500: TxpButton
-      Left = 64
-      Top = 8
-      Width = 35
-      Height = 35
-      Caption = '500'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 1
-      OnClick = btn500Click
-    end
-    object btn900: TxpButton
-      Left = 112
-      Top = 8
-      Width = 35
-      Height = 35
-      Caption = '900'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 2
-      OnClick = btn900Click
-    end
-    object btn200: TxpButton
-      Left = 16
-      Top = 48
-      Width = 35
-      Height = 35
-      Caption = '200'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 3
-      OnClick = btn200Click
-    end
-    object btn600: TxpButton
-      Left = 64
-      Top = 48
-      Width = 35
-      Height = 35
-      Caption = '600'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 4
-      OnClick = btn600Click
-    end
-    object btn1000: TxpButton
-      Left = 112
-      Top = 48
-      Width = 35
-      Height = 35
-      Caption = '1000'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 5
-      OnClick = btn1000Click
-    end
-    object btn300: TxpButton
-      Left = 16
-      Top = 88
-      Width = 35
-      Height = 35
-      Caption = '300'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 6
-      OnClick = btn300Click
-    end
-    object btn700: TxpButton
-      Left = 64
-      Top = 88
-      Width = 35
-      Height = 35
-      Caption = '700'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 7
-      OnClick = btn700Click
-    end
-    object btn400: TxpButton
-      Left = 16
-      Top = 128
-      Width = 35
-      Height = 35
-      Caption = '400'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 8
-      OnClick = btn400Click
-    end
-    object btn800: TxpButton
-      Left = 64
-      Top = 128
-      Width = 35
-      Height = 35
-      Caption = '800'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 9
-      OnClick = btn800Click
-    end
-    object splitter: TRxSplitter
-      Left = 5
-      Top = 169
-      Width = 143
-      Height = 4
-      BevelInner = bvRaised
-      BorderStyle = bsSingle
-    end
-    object btn10: TxpButton
-      Left = 16
-      Top = 179
-      Width = 35
-      Height = 35
-      Caption = '10'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 11
-      OnClick = btn10Click
-    end
-    object btn50: TxpButton
-      Left = 64
-      Top = 179
-      Width = 35
-      Height = 35
-      Caption = '50'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 12
-      OnClick = btn50Click
-    end
-    object btn90: TxpButton
-      Left = 112
-      Top = 179
-      Width = 35
-      Height = 35
-      Caption = '90'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 13
-      OnClick = btn90Click
-    end
-    object btn20: TxpButton
-      Left = 16
-      Top = 219
-      Width = 35
-      Height = 35
-      Caption = '20'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 14
-      OnClick = btn20Click
-    end
-    object btn60: TxpButton
-      Left = 64
-      Top = 219
-      Width = 35
-      Height = 35
-      Caption = '60'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 15
-      OnClick = btn60Click
-    end
-    object btn0: TxpButton
-      Left = 112
-      Top = 219
-      Width = 35
-      Height = 35
-      Caption = '0'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 16
-      OnClick = btn0Click
-    end
-    object btn30: TxpButton
-      Left = 16
-      Top = 259
-      Width = 35
-      Height = 35
-      Caption = '30'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 17
-      OnClick = btn30Click
-    end
-    object btn70: TxpButton
-      Left = 64
-      Top = 259
-      Width = 35
-      Height = 35
-      Caption = '70'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 18
-      OnClick = btn70Click
-    end
-    object btnReserved: TxpButton
-      Left = 112
-      Top = 259
-      Width = 35
-      Height = 35
-      Caption = 'SAV'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clGreen
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 19
-      OnClick = btnReservedClick
-    end
-    object btn40: TxpButton
-      Left = 16
-      Top = 304
-      Width = 35
-      Height = 35
-      Caption = '40'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 20
-      OnClick = btn40Click
-    end
-    object btn80: TxpButton
-      Left = 64
-      Top = 304
-      Width = 35
-      Height = 35
+    object btn80: TButton
+      Left = 68
+      Top = 303
+      Width = 33
+      Height = 36
       Caption = '80'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 21
+      TabOrder = 0
       OnClick = btn80Click
     end
-    object btnCal: TxpButton
-      Left = 112
-      Top = 304
-      Width = 35
-      Height = 35
+    object btn40: TButton
+      Left = 18
+      Top = 302
+      Width = 33
+      Height = 36
+      Caption = '40'
+      TabOrder = 1
+      OnClick = btn40Click
+    end
+    object btnCal: TButton
+      Left = 115
+      Top = 303
+      Width = 33
+      Height = 36
       Caption = 'CAL'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      Gradient = True
-      TabOrder = 22
+      TabOrder = 2
       OnClick = btnCalClick
+    end
+    object btnReserved: TButton
+      Left = 115
+      Top = 259
+      Width = 33
+      Height = 36
+      Caption = 'SAV'
+      TabOrder = 3
+      OnClick = btnReservedClick
+    end
+    object btn30: TButton
+      Left = 18
+      Top = 261
+      Width = 33
+      Height = 36
+      Caption = '30'
+      TabOrder = 4
+      OnClick = btn30Click
+    end
+    object btn20: TButton
+      Left = 18
+      Top = 220
+      Width = 33
+      Height = 36
+      Caption = '20'
+      TabOrder = 5
+      OnClick = btn20Click
+    end
+    object btn10: TButton
+      Left = 18
+      Top = 180
+      Width = 33
+      Height = 36
+      Caption = '10'
+      TabOrder = 6
+      OnClick = btn10Click
+    end
+    object btn50: TButton
+      Left = 68
+      Top = 180
+      Width = 33
+      Height = 36
+      Caption = '50'
+      TabOrder = 7
+      OnClick = btn50Click
+    end
+    object btn70: TButton
+      Left = 68
+      Top = 261
+      Width = 33
+      Height = 36
+      Caption = '70'
+      TabOrder = 8
+      OnClick = btn70Click
+    end
+    object btn60: TButton
+      Left = 68
+      Top = 220
+      Width = 33
+      Height = 36
+      Caption = '60'
+      TabOrder = 9
+      OnClick = btn60Click
+    end
+    object btn0: TButton
+      Left = 115
+      Top = 218
+      Width = 33
+      Height = 36
+      Caption = '0'
+      TabOrder = 10
+      OnClick = btn0Click
+    end
+    object btn90: TButton
+      Left = 115
+      Top = 178
+      Width = 33
+      Height = 36
+      Caption = '90'
+      TabOrder = 11
+      OnClick = btn90Click
+    end
+    object btn800: TButton
+      Left = 65
+      Top = 125
+      Width = 33
+      Height = 36
+      Caption = '800'
+      TabOrder = 12
+      OnClick = btn800Click
+    end
+    object btn400: TButton
+      Left = 15
+      Top = 125
+      Width = 33
+      Height = 36
+      Caption = '400'
+      TabOrder = 13
+      OnClick = btn400Click
+    end
+    object btn300: TButton
+      Left = 15
+      Top = 85
+      Width = 33
+      Height = 36
+      Caption = '300'
+      TabOrder = 14
+      OnClick = btn300Click
+    end
+    object btn700: TButton
+      Left = 65
+      Top = 85
+      Width = 33
+      Height = 36
+      Caption = '700'
+      TabOrder = 15
+      OnClick = btn700Click
+    end
+    object btn600: TButton
+      Left = 65
+      Top = 44
+      Width = 33
+      Height = 36
+      Caption = '600'
+      TabOrder = 16
+      OnClick = btn600Click
+    end
+    object btn200: TButton
+      Left = 15
+      Top = 44
+      Width = 33
+      Height = 36
+      Caption = '200'
+      TabOrder = 17
+      OnClick = btn200Click
+    end
+    object btn100: TButton
+      Left = 15
+      Top = 4
+      Width = 33
+      Height = 36
+      Caption = '100'
+      TabOrder = 18
+      OnClick = btn100Click
+    end
+    object btn500: TButton
+      Left = 65
+      Top = 4
+      Width = 33
+      Height = 36
+      Caption = '500'
+      TabOrder = 19
+      OnClick = btn500Click
+    end
+    object btn900: TButton
+      Left = 113
+      Top = 7
+      Width = 33
+      Height = 36
+      Caption = '900'
+      TabOrder = 21
+      OnClick = btn900Click
+    end
+    object btn1000: TButton
+      Left = 113
+      Top = 47
+      Width = 33
+      Height = 36
+      Caption = '1000'
+      TabOrder = 20
+      OnClick = btn1000Click
     end
   end
   object pnShutdownProcess: TxpPanel
