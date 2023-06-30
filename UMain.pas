@@ -35,54 +35,53 @@ type
     lbMessage: TLabel;
     pnKeyboard: TPanel;
     shape100: TShape;
-    btn100: TxpButton;
+    btn100: TButton;
     Shape500: TShape;
-    btn500: TxpButton;
+    btn500: TButton;
     Shape900: TShape;
-    btn900: TxpButton;
+    btn900: TButton;
     Shape200: TShape;
-    btn200: TxpButton;
+    btn200: TButton;
     Shape600: TShape;
-    btn600: TxpButton;
+    btn600: TButton;
     Shape1000: TShape;
-    btn1000: TxpButton;
+    btn1000: TButton;
     Shape300: TShape;
-    btn300: TxpButton;
+    btn300: TButton;
     shape700: TShape;
-    btn700: TxpButton;
+    btn700: TButton;
     ShapeLimUp: TShape;
     Shape400: TShape;
-    btn400: TxpButton;
+    btn400: TButton;
     Shape800: TShape;
-    btn800: TxpButton;
+    btn800: TButton;
     ShapeLimDown: TShape;
     btnLimUp: TRxSpeedButton;
     btnLimDown: TRxSpeedButton;
-    splitter: TRxSplitter;
     Shape10: TShape;
-    btn10: TxpButton;
+    btn10: TButton;
     Shape50: TShape;
-    btn50: TxpButton;
+    btn50: TButton;
     Shape90: TShape;
-    btn90: TxpButton;
+    btn90: TButton;
     Shape20: TShape;
-    btn20: TxpButton;
+    btn20: TButton;
     Shape60: TShape;
-    btn60: TxpButton;
+    btn60: TButton;
     Shape0: TShape;
-    btn0: TxpButton;
+    btn0: TButton;
     Shape30: TShape;
-    btn30: TxpButton;
+    btn30: TButton;
     Shape70: TShape;
-    btn70: TxpButton;
+    btn70: TButton;
     ShapeReserved: TShape;
-    btnReserved: TxpButton;
+    btnReserved: TButton;
     Shape40: TShape;
-    btn40: TxpButton;
+    btn40: TButton;
     Shape80: TShape;
-    btn80: TxpButton;
+    btn80: TButton;
     ShapeCal: TShape;
-    btnCal: TxpButton;
+    btnCal: TButton;
     btnCancel: TButton;
     lbChannel3: TLabel;
     lbMove: TLabel;
@@ -103,8 +102,7 @@ type
     packet2: TComDataPacket;
     SelectDirectory: TbsSkinSelectDirectoryDialog;
     LinkTimer: TTimer;
-    pnShutdownProcess: TxpPanel;
-    sgProcess: TbsSkinGauge;
+    pnShutdownProcess: TPanel;
     lbWarningMessage: TLabel;
     lbProgress: TLabel;
     ShutdownTimer: TTimer;
@@ -1306,22 +1304,22 @@ begin
   if (sec>10) and bLink
     then // связь отвалилась
       begin
-        // начинаем обратный отсчет
+        {// начинаем обратный отсчет
         sgProcess.Value:=0;
         lbProgress.Caption:='60 сек';
         pnShutDownProcess.Visible:=true;
         ShutdownTimer.Enabled:=true;
         // выключаем признак связи
-        bLink:=false;
+        bLink:=false;}
       end;
 end;
 
 // таймер процесса выключения
 procedure TForm1.ShutdownTimerTimer(Sender: TObject);
 begin
-  sgProcess.Value:=sgProcess.Value+1;
-  lbProgress.Caption:=IntToStr(60-sgProcess.Value)+' сек';
-  if sgProcess.Value=60
+  ProcessValue:=ProcessValue+1;
+  lbProgress.Caption:=IntToStr(60-ProcessValue)+' сек';
+  if ProcessValue=60
     then // выключение компьютера
       begin
         ShutdownTimer.Enabled:=false;

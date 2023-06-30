@@ -1056,34 +1056,11 @@ object Form1: TForm1
       OnClick = btn1000Click
     end
   end
-  object pnShutdownProcess: TxpPanel
+  object pnShutdownProcess: TPanel
     Left = 120
-    Top = 328
+    Top = 208
     Width = 329
     Height = 121
-    GradientFill = False
-    StartColor = 16511469
-    EndColor = 16244694
-    FillDirection = fdLeftToRight
-    TitleShow = False
-    Caption = 'xpPanel'
-    Title = 'xpPanelTitle'
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clNavy
-    TitleFont.Height = -11
-    TitleFont.Name = 'MS Sans Serif'
-    TitleFont.Style = [fsBold]
-    TitleAlignment = taCenter
-    TitleStartColor = clWhite
-    TitleEndColor = 15777194
-    TitleColor = clWhite
-    TitleFillDirect = fdLeftToRight
-    TitleImageAlign = tiaLeft
-    TitleButtons = []
-    DefaultHeight = 60
-    BorderColor = clWhite
-    RoundedCorner = [rcTopLeft, rcTopRight, rcBottomLeft, rcBottomRight]
-    BGImageAlign = iaStretch
     Color = clGray
     TabOrder = 3
     object lbWarningMessage: TLabel
@@ -1127,31 +1104,6 @@ object Form1: TForm1
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-    end
-    object sgProcess: TbsSkinGauge
-      Left = 16
-      Top = 68
-      Width = 297
-      Height = 20
-      HintImageIndex = 0
-      TabOrder = 0
-      SkinDataName = 'gauge'
-      DefaultFont.Charset = DEFAULT_CHARSET
-      DefaultFont.Color = clWindowText
-      DefaultFont.Height = 14
-      DefaultFont.Name = 'Arial'
-      DefaultFont.Style = []
-      DefaultWidth = 0
-      DefaultHeight = 0
-      UseSkinFont = True
-      UseSkinSize = True
-      ShowProgressText = False
-      ShowPercent = False
-      MinValue = 0
-      MaxValue = 60
-      Value = 0
-      Vertical = False
-      ProgressAnimationPause = 3000
     end
   end
   object Timer: TTimer
