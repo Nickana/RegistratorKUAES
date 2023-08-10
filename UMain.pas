@@ -116,6 +116,7 @@ type
     btTPAP: TButton;
     WarningTimer: TTimer;
     btAcknowledge: TButton;
+    memo1: TMemo;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     // преобразование веса со второго канала
@@ -177,6 +178,7 @@ type
     procedure btTVSClick(Sender: TObject);
     procedure btDPKClick(Sender: TObject);
     procedure btTPAPClick(Sender: TObject);
+    procedure btAcknowledgeClick(Sender: TObject);
   private
     { Private declarations }
     // параметры
@@ -308,8 +310,8 @@ begin
   // close database
   CloseFile(f);
   // close channels
-  //COM1.Close;  // раскоментить
-  //COM2.Close;
+  COM1.Close;  // раскоментить
+  COM2.Close;
   // close ini-file
   data.WriteFloat('Settings','coeff',coeff);
   data.WriteInteger('Settings','offset',offset);
@@ -755,7 +757,7 @@ begin
   // init COM1
   packet1.Size:=MaxLen1;
   packet1.StartString:=StartByte1;
-  //COM1.Open;
+  COM1.Open;
   // init COM2
   packet2.Size:=MaxLen2;
   packet2.StartString:=StartByte2;
@@ -1346,15 +1348,8 @@ end;
 procedure TForm1.pnWarnBtMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
- if (limUpWarn=0)then  //если верхний предел сигнализации = 0
-  begin
-    limUpWarn:=data.ReadInteger('Settings','limUp_TVS',0);
-    limDownWarn:=data.ReadInteger('Settings','limDown_TVS',0);
-  end;
   lWarnBt.Top:=lWarnBt.Top+1;
   lWarnBt.Left:=lWarnBt.Left+1;
-  if blWarning=false then pnWarning.Visible:=true
-  else blWarning:=false;
   pnWarning.Visible:=true;
   if Form1.pnWarnBt.Color = clRed then Form1.pnWarnBt.Color := clBtnFace;
 end;
@@ -1367,11 +1362,20 @@ begin
 end;
 
 procedure TForm1.WarningTimerTimer(Sender: TObject);//код таймера переносной из другой версии
+var
+  check : boolean;
 begin
-if blWarning = true then
+  weight := 180;
+  check := limUpWarn <= weight;
+  if check then
+  begin
+    if pnWarnBt.Color = clBtnFace then pnWarnBt.Color := clGreen
+      else   pnWarnBt.Color := clBtnFace;
+  end
+  else
     begin
-      if Form1.pnWarnBt.Color = clBtnFace then Form1.pnWarnBt.Color := clRed
-      else Form1.pnWarnBt.Color := clBtnFace;
+      if pnWarnBt.Color = clBtnFace then pnWarnBt.Color := clRed
+      else pnWarnBt.Color := clBtnFace;
     end;
 end;
 
@@ -1382,6 +1386,8 @@ begin
   limUpWarn:=data.ReadInteger('Settings','limUp_TVS',0);
   limDownWarn:=data.ReadInteger('Settings','limDown_TVS',0);
   pnWarning.Visible:=false;
+  WarningTimer.Enabled := true;
+  memo1.Lines.Add(IntToStr(limUpWarn));
 
 end;
 
@@ -1392,6 +1398,8 @@ begin
   limUpWarn:=data.ReadInteger('Settings','limUp_DPK',0);
   limDownWarn:=data.ReadInteger('Settings','limDown_DPK',0);
   pnWarning.Visible:=false;
+  WarningTimer.Enabled := true;
+  memo1.Lines.Add(IntToStr(limUpWarn));
 
 end;
 
@@ -1402,7 +1410,15 @@ begin
   limUpWarn:=data.ReadInteger('Settings','limUp_TPAP',0);
   limDownWarn:=data.ReadInteger('Settings','limDown_TPAP',0);
   pnWarning.Visible:=false;
+  WarningTimer.Enabled := true;
+  memo1.Lines.Add(IntToStr(limUpWarn));
 
+end;       
+
+procedure TForm1.btAcknowledgeClick(Sender: TObject);
+begin
+ WarningTimer.Enabled := false;
+ pnWarning.Visible:=false;
 end;
 
 end.

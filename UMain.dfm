@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 324
-  Top = 340
+  Left = 238
+  Top = 180
   Width = 747
-  Height = 546
+  Height = 553
   Caption = #1056#1077#1075#1080#1089#1090#1088#1072#1090#1086#1088
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -192,10 +192,10 @@ object Form1: TForm1
       ParentFont = False
     end
     object btnShutDown: TRxSpeedButton
-      Left = 597
-      Top = -4
-      Width = 124
-      Height = 45
+      Left = 592
+      Top = 8
+      Width = 105
+      Height = 41
       Anchors = [akTop, akRight]
       Caption = #1042#1099#1082#1083#1102#1095#1077#1085#1080#1077' '#1088#1077#1075#1080#1089#1090#1088#1072#1090#1086#1088#1072
       Font.Charset = DEFAULT_CHARSET
@@ -210,7 +210,7 @@ object Form1: TForm1
     end
     object lbMessage: TLabel
       Left = 584
-      Top = 40
+      Top = 48
       Width = 137
       Height = 35
       Alignment = taCenter
@@ -353,10 +353,10 @@ object Form1: TForm1
       OnMouseDown = pnWarnBtMouseDown
       OnMouseUp = pnWarnBtMouseUp
       object lWarnBt: TLabel
-        Left = 21
-        Top = 1
-        Width = 97
-        Height = 65
+        Left = 8
+        Top = 6
+        Width = 124
+        Height = 56
         Align = alCustom
         Alignment = taCenter
         Caption = #1053#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077' '#1091#1089#1080#1083#1080#1103' '#1085#1072' '#1079#1072#1093#1074#1072#1090#1077' '#1074#1077#1089#1091' '#1087#1077#1088#1077#1075#1088#1091#1078#1072#1077#1084#1086#1075#1086' '#1080#1079#1076#1077#1083#1080#1103
@@ -371,7 +371,7 @@ object Form1: TForm1
     Left = 0
     Top = 75
     Width = 580
-    Height = 432
+    Height = 439
     AllowPanning = pmHorizontal
     AllowZoom = False
     BackWall.Brush.Color = clWhite
@@ -593,6 +593,7 @@ object Form1: TForm1
         Height = 25
         Caption = #1050#1074#1080#1090#1080#1088#1086#1074#1072#1090#1100
         TabOrder = 3
+        OnClick = btAcknowledgeClick
       end
     end
     object Series2: TLineSeries
@@ -637,7 +638,7 @@ object Form1: TForm1
     Left = 580
     Top = 75
     Width = 151
-    Height = 432
+    Height = 439
     Align = alRight
     BevelOuter = bvNone
     Color = clGray
@@ -1064,6 +1065,15 @@ object Form1: TForm1
       TabOrder = 20
       OnClick = btn1000Click
     end
+    object memo1: TMemo
+      Left = 3
+      Top = 345
+      Width = 145
+      Height = 89
+      Lines.Strings = (
+        'memo1')
+      TabOrder = 22
+    end
   end
   object pnShutdownProcess: TPanel
     Left = 120
@@ -1212,6 +1222,7 @@ object Form1: TForm1
     Top = 277
   end
   object WarningTimer: TTimer
+    Enabled = False
     Interval = 500
     OnTimer = WarningTimerTimer
     Left = 8
