@@ -115,6 +115,7 @@ type
     btDPK: TButton;
     btTPAP: TButton;
     WarningTimer: TTimer;
+    btAcknowledge: TButton;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     // преобразование веса со второго канала
@@ -1345,7 +1346,7 @@ end;
 procedure TForm1.pnWarnBtMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
- if (limUpWarn=0)then
+ if (limUpWarn=0)then  //если верхний предел сигнализации = 0
   begin
     limUpWarn:=data.ReadInteger('Settings','limUp_TVS',0);
     limDownWarn:=data.ReadInteger('Settings','limDown_TVS',0);

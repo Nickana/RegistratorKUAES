@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 269
-  Top = 142
-  Width = 824
-  Height = 586
+  Left = 324
+  Top = 340
+  Width = 747
+  Height = 546
   Caption = #1056#1077#1075#1080#1089#1090#1088#1072#1090#1086#1088
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,14 +18,14 @@ object Form1: TForm1
   object pnTools: TPanel
     Left = 0
     Top = 0
-    Width = 808
+    Width = 731
     Height = 75
     Align = alTop
     BevelOuter = bvNone
     Color = clBlack
     TabOrder = 0
     DesignSize = (
-      808
+      731
       75)
     object lbChannel1: TLabel
       Left = 8
@@ -192,10 +192,10 @@ object Form1: TForm1
       ParentFont = False
     end
     object btnShutDown: TRxSpeedButton
-      Left = 644
-      Top = 4
-      Width = 170
-      Height = 25
+      Left = 597
+      Top = -4
+      Width = 124
+      Height = 45
       Anchors = [akTop, akRight]
       Caption = #1042#1099#1082#1083#1102#1095#1077#1085#1080#1077' '#1088#1077#1075#1080#1089#1090#1088#1072#1090#1086#1088#1072
       Font.Charset = DEFAULT_CHARSET
@@ -205,12 +205,13 @@ object Form1: TForm1
       Font.Style = [fsBold]
       Layout = blGlyphBottom
       ParentFont = False
+      WordWrap = True
       OnClick = btnShutDownClick
     end
     object lbMessage: TLabel
-      Left = 644
-      Top = 32
-      Width = 170
+      Left = 584
+      Top = 40
+      Width = 137
       Height = 35
       Alignment = taCenter
       Anchors = [akTop, akRight]
@@ -343,7 +344,7 @@ object Form1: TForm1
       OnClick = btnKeyboardClick
     end
     object pnWarnBt: TPanel
-      Left = 456
+      Left = 440
       Top = 8
       Width = 137
       Height = 65
@@ -352,10 +353,10 @@ object Form1: TForm1
       OnMouseDown = pnWarnBtMouseDown
       OnMouseUp = pnWarnBtMouseUp
       object lWarnBt: TLabel
-        Left = 8
-        Top = 0
-        Width = 121
-        Height = 52
+        Left = 21
+        Top = 1
+        Width = 97
+        Height = 65
         Align = alCustom
         Alignment = taCenter
         Caption = #1053#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077' '#1091#1089#1080#1083#1080#1103' '#1085#1072' '#1079#1072#1093#1074#1072#1090#1077' '#1074#1077#1089#1091' '#1087#1077#1088#1077#1075#1088#1091#1078#1072#1077#1084#1086#1075#1086' '#1080#1079#1076#1077#1083#1080#1103
@@ -369,8 +370,8 @@ object Form1: TForm1
   object Chart: TChart
     Left = 0
     Top = 75
-    Width = 657
-    Height = 472
+    Width = 580
+    Height = 432
     AllowPanning = pmHorizontal
     AllowZoom = False
     BackWall.Brush.Color = clWhite
@@ -552,10 +553,10 @@ object Form1: TForm1
       end
     end
     object pnWarning: TPanel
-      Left = 456
+      Left = 440
       Top = -1
       Width = 137
-      Height = 138
+      Height = 178
       TabOrder = 2
       Visible = False
       object btTVS: TButton
@@ -581,9 +582,17 @@ object Form1: TForm1
         Top = 96
         Width = 75
         Height = 25
-        Caption = #1058#1040','#1040#1055
+        Caption = #1058#1055','#1040#1055
         TabOrder = 2
         OnClick = btTPAPClick
+      end
+      object btAcknowledge: TButton
+        Left = 32
+        Top = 136
+        Width = 75
+        Height = 25
+        Caption = #1050#1074#1080#1090#1080#1088#1086#1074#1072#1090#1100
+        TabOrder = 3
       end
     end
     object Series2: TLineSeries
@@ -625,10 +634,10 @@ object Form1: TForm1
     end
   end
   object pnKeyboard: TPanel
-    Left = 657
+    Left = 580
     Top = 75
     Width = 151
-    Height = 472
+    Height = 432
     Align = alRight
     BevelOuter = bvNone
     Color = clGray
